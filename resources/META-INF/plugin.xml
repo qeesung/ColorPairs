@@ -1,17 +1,33 @@
 <idea-plugin version="2">
-  <id>com.your.company.unique.plugin.id</id>
-  <name>Plugin display name here</name>
+  <id>io.github.qeesung.plugins.ColorPair</id>
+  <name>ColorPairs</name>
   <version>1.0</version>
-  <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+  <vendor email="1245712564@qq.com" url="qeesung.github.io">qeesung</vendor>
 
   <description><![CDATA[
-      Enter short description for your plugin here.<br>
-      <em>most HTML tags may be used</em>
+    <p>Color Pairs</p><br/>
+    This is an intellij idea plugin that can color the paired symbols , such as:<br/>
+
+    <ul>
+    <li>crul bracket(<q>{}</q>)
+    <li>square bracket(<q>[]</q>)
+    <li>round brackets(<q>()</q>)
+    <li>double quote(<q>""</q>)
+    <li>single quote(<q>''</q>)
+    <li>html tag
+    </ul>
+
+    Not only that , you can also set the shape of the color:
+
+    <ul>
+    <li>underline
+    <li>outline
+    <li>solid
+    </ul>
     ]]></description>
 
   <change-notes><![CDATA[
-      Add change notes here.<br>
-      <em>most HTML tags may be used</em>
+    This is the first version
     ]]>
   </change-notes>
 
