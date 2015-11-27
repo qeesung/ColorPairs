@@ -45,10 +45,22 @@
   </extensions>
 
   <actions>
-    <action id="io.github.qeesung.ColorPairsAction" class="io.github.qeesung.actions.ColorPairAction" text="Color Pair"
-            description="Color Pair Action">
-      <add-to-group group-id="ToolsMenu" anchor="before" relative-to-action="ExternalToolsGroup"/>
-    </action>
+    <!--create a new group -->
+    <group id="color.piars.actions.group">
+
+      <action id="io.github.qeesung.ColorPairsAction" class="io.github.qeesung.actions.ColorPairAction" text="Color Pair"
+              description="Color Pair Action"/>
+      <action id="io.github.qeesung.ColorPairsConfiguration" class="io.github.qeesung.actions.ColorPairsConfiguration"
+              text="Color Pairs Settings" description="configure the color and shape of the Color Pairs"/>
+    </group>
+
+     <group id="color.pairs.group" text="Color Pairs" popup="true">
+       <reference ref="color.piars.actions.group"/>
+       <add-to-group group-id="ToolsMenu" anchor="first"/>
+     </group>
+
+
   </actions>
+
 
 </idea-plugin>
