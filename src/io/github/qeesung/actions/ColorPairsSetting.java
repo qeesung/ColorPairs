@@ -2,6 +2,7 @@ package io.github.qeesung.actions;
 
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import io.github.qeesung.data.ColorPairsConfigurations;
 import io.github.qeesung.ui.ConfigureColorAndShapeDialog;
 
 import java.awt.*;
@@ -9,7 +10,7 @@ import java.awt.*;
 /**
  * Created by qeesung on 2015/11/28.
  */
-public class ColorPairsConfiguration extends AnAction {
+public class ColorPairsSetting extends AnAction {
 
     @Override
     public void actionPerformed(AnActionEvent e) {
