@@ -50,7 +50,7 @@
 
       <action id="io.github.qeesung.ColorPairsAction" class="io.github.qeesung.actions.ColorPairAction" text="Color Pair"
               description="Color Pair Action"/>
-      <action id="io.github.qeesung.ColorPairsConfiguration" class="io.github.qeesung.actions.ColorPairsConfiguration"
+      <action id="io.github.qeesung.ColorPairsConfiguration" class="io.github.qeesung.actions.ColorPairsSetting"
               text="Color Pairs Settings" description="configure the color and shape of the Color Pairs"/>
     </group>
 
