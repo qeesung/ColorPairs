@@ -1,0 +1,74 @@
+package io.github.qeesung.ui;
+
+import javax.swing.*;
+import java.awt.event.*;
+
+public class ConfigureColorAndShapeDialog extends JDialog {
+    private JPanel contentPane;
+    private JButton buttonOK;
+    private JButton buttonCancel;
+
+    private JLabel rounfBracketColorLabel;
+    private JComboBox rounfBracketComboBox;
+    private JLabel squareBracketColorLabel;
+    private JComboBox squareBracketComboBox;
+    private JLabel crulBracketColorLabel;
+    private JComboBox crulBracketComboBox;
+    private JLabel doubleQuoteBracketColorLabel;
+    private JComboBox doubleQuoteBracketComboBox;
+    private JLabel singleQuoteBracketColorLabel;
+    private JComboBox singleQuoteBracketComboBox;
+    private JLabel triBracketColorLabel;
+    private JComboBox triBracketComboBox;
+    private JButton resetButton;
+
+    public ConfigureColorAndShapeDialog() {
+        setContentPane(contentPane);
+        setModal(true);
+        getRootPane().setDefaultButton(buttonOK);
+
+        buttonOK.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                onOK();
+            }
+        });
+
+        buttonCancel.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                onCancel();
+            }
+        });
+
+// call onCancel() when cross is clicked
+        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                onCancel();
+            }
+        });
+
+// call onCancel() on ESCAPE
+        contentPane.registerKeyboardAction(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                onCancel();
+            }
+        }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+    }
+
+    private void onOK() {
+// add your code here
+        dispose();
+    }
+
+    private void onCancel() {
+// add your code here if necessary
+        dispose();
+    }
+
+    public static void main(String[] args) {
+        ConfigureColorAndShapeDialog dialog = new ConfigureColorAndShapeDialog();
+        dialog.pack();
+        dialog.setVisible(true);
+        System.exit(0);
+    }
+}
