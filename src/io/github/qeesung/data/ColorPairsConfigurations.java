@@ -1,6 +1,8 @@
 package io.github.qeesung.data;
 
 
+import io.github.qeesung.utils.ColorPairsConfigFileHandler;
+
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package io.github.qeesung.data;
+package io.github.qeesung.utils;
 
 /**
  * Created by qeesung on 2015/11/29.

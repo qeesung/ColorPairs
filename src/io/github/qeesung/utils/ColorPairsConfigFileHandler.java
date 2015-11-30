@@ -1,6 +1,8 @@
-package io.github.qeesung.data;
+package io.github.qeesung.utils;
 
-import com.intellij.openapi.graph.layout.hierarchic.incremental.PartitionCellId;
+import io.github.qeesung.data.PairColorProperty;
+import io.github.qeesung.data.PairColorShape;
+import io.github.qeesung.data.PairType;
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
@@ -25,7 +27,7 @@ public class ColorPairsConfigFileHandler {
      * @param configMap all configurations
      * @param configFile config xml file path
      */
-    public static void writeConfigToXmlFile(Map<PairType , PairColorProperty> configMap , String configFile)
+    public static void writeConfigToXmlFile(Map<PairType, PairColorProperty> configMap , String configFile)
     {
         if(configFile == null || configFile == null)
             return;
