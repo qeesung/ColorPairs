@@ -29,13 +29,12 @@ public class ColorPairsConfigurations {
     {
         if(Instance == null)
             Instance = new ColorPairsConfigurations();
+        Instance.loadConfig();
         return Instance;
     }
 
 
-    public ColorPairsConfigurations()
-    {
-        loadConfig();
+    public ColorPairsConfigurations() {
     }
 
     /**

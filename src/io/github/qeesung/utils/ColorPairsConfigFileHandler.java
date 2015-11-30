@@ -71,7 +71,7 @@ public class ColorPairsConfigFileHandler {
             Text lineBreak3 = doc.createTextNode("\n\t\t");
             pairElement.appendChild(lineBreak3);
             Element colorElement = doc.createElement(ColorPairsConfigFileTagName.COLOR_TAG);
-            colorElement.appendChild(doc.createTextNode(property.getPairColor().getRGB()+""));
+            colorElement.appendChild(doc.createTextNode(convertColorToHex(property.getPairColor())));
             pairElement.appendChild(colorElement);
 
             //shape tag
@@ -139,13 +139,24 @@ public class ColorPairsConfigFileHandler {
                 //  read all configurations from xml file
                 String typeValue = eElement.getElementsByTagName(ColorPairsConfigFileTagName.TYPE_TAG).item(0).getTextContent();
                 String colorValue = eElement.getElementsByTagName(ColorPairsConfigFileTagName.COLOR_TAG).item(0).getTextContent();
-                int colorREGValue = Integer.parseInt(colorValue);
+                Color color = convertHexToColor(colorValue);
                 String shapeValue = eElement.getElementsByTagName(ColorPairsConfigFileTagName.SHAPE_TAG).item(0).getTextContent();
 
                 configMap.put(PairType.valueOf(typeValue) ,
-                        new PairColorProperty(new Color(colorREGValue) , PairColorShape.valueOf(shapeValue)));
+                        new PairColorProperty(color , PairColorShape.valueOf(shapeValue)));
             }
         }
 
+    }
+
+    private static String convertColorToHex(Color color)
+    {
+        return "#"+Integer.toHexString(color.getRGB()).substring(2);
+    }
+
+    private static Color convertHexToColor(String hex)
+    {
+        int rgb = Integer.parseInt(hex.substring(1), 16 );
+        return new Color(rgb);
     }
 }
