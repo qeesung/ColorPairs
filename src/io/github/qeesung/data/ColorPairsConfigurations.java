@@ -37,6 +37,11 @@ public class ColorPairsConfigurations {
     public ColorPairsConfigurations() {
     }
 
+    public Map<PairType , PairColorProperty> getGlobalConfigMap()
+    {
+        return this.globalConfigMap;
+    }
+
     /**
      * load the config from config xml file
      */

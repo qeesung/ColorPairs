@@ -19,9 +19,9 @@ public class ColorPairsDefaultSetting {
         defaultSettingMap.put(PairType.CURL_BRACKET, new PairColorProperty(new Color(238, 180, 34) ,PairColorShape.SOLID));
         defaultSettingMap.put(PairType.DOUBLE_QUOTE , new PairColorProperty(new Color(118, 238, 0) ,PairColorShape.SOLID));
         defaultSettingMap.put(PairType.SINGLE_QUOTE , new PairColorProperty(new Color(11, 65, 26) ,PairColorShape.SOLID));
-        defaultSettingMap.put(PairType.ANGLE_BRACKET , new PairColorProperty(new Color(205, 92, 92) ,PairColorShape.UNDER_LINE));
-        defaultSettingMap.put(PairType.MISS_PAIR , new PairColorProperty(new Color(238, 13, 48) ,PairColorShape.OUT_LINE));
-        defaultSettingMap.put(PairType.OTHER_PAIR, new PairColorProperty(new Color(33, 232, 238) ,PairColorShape.OUT_LINE));
+        defaultSettingMap.put(PairType.ANGLE_BRACKET , new PairColorProperty(new Color(205, 92, 92) ,PairColorShape.UNDERLINE));
+        defaultSettingMap.put(PairType.MISS_PAIR , new PairColorProperty(new Color(238, 13, 48) ,PairColorShape.OUTLINE));
+        defaultSettingMap.put(PairType.OTHER_PAIR, new PairColorProperty(new Color(33, 232, 238) ,PairColorShape.OUTLINE));
     }
 
     public static Map<PairType , PairColorProperty> getDefaultSetting()

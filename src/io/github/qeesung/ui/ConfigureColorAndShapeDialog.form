@@ -86,7 +86,7 @@
                       <text value="(...)"/>
                     </properties>
                   </component>
-                  <component id="6f30a" class="javax.swing.JLabel" binding="rounfBracketColorLabel">
+                  <component id="6f30a" class="javax.swing.JLabel" binding="roundBracketColorLabel">
                     <constraints>
                       <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
@@ -98,15 +98,15 @@
                       <text value="     "/>
                     </properties>
                   </component>
-                  <component id="66371" class="javax.swing.JComboBox" binding="rounfBracketComboBox">
+                  <component id="66371" class="javax.swing.JComboBox" binding="roundBracketComboBox">
                     <constraints>
                       <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
                       <model>
-                        <item value="Outline"/>
-                        <item value="Underline"/>
-                        <item value="Solid"/>
+                        <item value="outline"/>
+                        <item value="underline"/>
+                        <item value="solid"/>
                       </model>
                     </properties>
                   </component>
@@ -135,9 +135,9 @@
                     </constraints>
                     <properties>
                       <model>
-                        <item value="Outline"/>
-                        <item value="Underline"/>
-                        <item value="Solid"/>
+                        <item value="outline"/>
+                        <item value="underline"/>
+                        <item value="solid"/>
                       </model>
                     </properties>
                   </component>
@@ -149,7 +149,7 @@
                       <text value="{...}"/>
                     </properties>
                   </component>
-                  <component id="c2657" class="javax.swing.JLabel" binding="crulBracketColorLabel">
+                  <component id="c2657" class="javax.swing.JLabel" binding="curlBracketColorLabel">
                     <constraints>
                       <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
@@ -159,15 +159,15 @@
                       <text value="     "/>
                     </properties>
                   </component>
-                  <component id="763b7" class="javax.swing.JComboBox" binding="crulBracketComboBox">
+                  <component id="763b7" class="javax.swing.JComboBox" binding="curlBracketComboBox">
                     <constraints>
                       <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
                       <model>
-                        <item value="Outline"/>
-                        <item value="Underline"/>
-                        <item value="Solid"/>
+                        <item value="outline"/>
+                        <item value="underline"/>
+                        <item value="solid"/>
                       </model>
                     </properties>
                   </component>
@@ -203,7 +203,7 @@
                       <text value="&quot;...&quot;"/>
                     </properties>
                   </component>
-                  <component id="677fe" class="javax.swing.JLabel" binding="doubleQuoteBracketColorLabel">
+                  <component id="677fe" class="javax.swing.JLabel" binding="doubleQuoteColorLabel">
                     <constraints>
                       <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
@@ -213,15 +213,15 @@
                       <text value="     "/>
                     </properties>
                   </component>
-                  <component id="74e14" class="javax.swing.JComboBox" binding="doubleQuoteBracketComboBox">
+                  <component id="74e14" class="javax.swing.JComboBox" binding="doubleQuoteComboBox">
                     <constraints>
                       <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
                       <model>
-                        <item value="Outline"/>
-                        <item value="Underline"/>
-                        <item value="Solid"/>
+                        <item value="outline"/>
+                        <item value="underline"/>
+                        <item value="solid"/>
                       </model>
                     </properties>
                   </component>
@@ -233,7 +233,7 @@
                       <text value="'...'"/>
                     </properties>
                   </component>
-                  <component id="d9cf3" class="javax.swing.JLabel" binding="singleQuoteBracketColorLabel">
+                  <component id="d9cf3" class="javax.swing.JLabel" binding="singleQuoteColorLabel">
                     <constraints>
                       <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
@@ -243,15 +243,15 @@
                       <text value="     "/>
                     </properties>
                   </component>
-                  <component id="75b9d" class="javax.swing.JComboBox" binding="singleQuoteBracketComboBox">
+                  <component id="75b9d" class="javax.swing.JComboBox" binding="singleQuoteComboBox">
                     <constraints>
                       <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
                       <model>
-                        <item value="Outline"/>
-                        <item value="Underline"/>
-                        <item value="Solid"/>
+                        <item value="outline"/>
+                        <item value="underline"/>
+                        <item value="solid"/>
                       </model>
                     </properties>
                   </component>
@@ -263,7 +263,7 @@
                       <text value="&lt;...&gt;"/>
                     </properties>
                   </component>
-                  <component id="9a076" class="javax.swing.JLabel" binding="triBracketColorLabel">
+                  <component id="9a076" class="javax.swing.JLabel" binding="angleBracketColorLabel">
                     <constraints>
                       <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
@@ -273,15 +273,15 @@
                       <text value="     "/>
                     </properties>
                   </component>
-                  <component id="e4ec1" class="javax.swing.JComboBox" binding="triBracketComboBox">
+                  <component id="e4ec1" class="javax.swing.JComboBox" binding="angleBracketComboBox">
                     <constraints>
                       <grid row="7" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
                       <model>
-                        <item value="Outline"/>
-                        <item value="Underline"/>
-                        <item value="Solid"/>
+                        <item value="outline"/>
+                        <item value="underline"/>
+                        <item value="solid"/>
                       </model>
                     </properties>
                   </component>
@@ -317,7 +317,7 @@
                       <text value="miss"/>
                     </properties>
                   </component>
-                  <component id="7f361" class="javax.swing.JLabel">
+                  <component id="7f361" class="javax.swing.JLabel" binding="missPairColorLabel">
                     <constraints>
                       <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
@@ -327,15 +327,15 @@
                       <text value="     "/>
                     </properties>
                   </component>
-                  <component id="b6f93" class="javax.swing.JComboBox">
+                  <component id="b6f93" class="javax.swing.JComboBox" binding="missPairComboBox">
                     <constraints>
                       <grid row="8" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
                       <model>
-                        <item value="Outline"/>
-                        <item value="Underline"/>
-                        <item value="Solid"/>
+                        <item value="outline"/>
+                        <item value="underline"/>
+                        <item value="solid"/>
                       </model>
                     </properties>
                   </component>
