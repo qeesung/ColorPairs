@@ -1,5 +1,6 @@
 package io.github.qeesung.ui;
 
+import com.intellij.ui.ColorChooser;
 import io.github.qeesung.data.*;
 import javafx.util.Pair;
 
@@ -82,6 +83,17 @@ public class ConfigureColorAndShapeDialog extends JDialog {
             colorShapeMap.put(PairType.MISS_PAIR , new Pair(missPairColorLabel, missPairComboBox));
         }
 
+        // add mouse listener for color selector
+        {
+            roundBracketColorLabel.addMouseListener(new ChangeColorListener());
+            squareBracketColorLabel.addMouseListener(new ChangeColorListener());
+            curlBracketColorLabel.addMouseListener(new ChangeColorListener());
+            doubleQuoteColorLabel.addMouseListener(new ChangeColorListener());
+            singleQuoteColorLabel.addMouseListener(new ChangeColorListener());
+            angleBracketColorLabel.addMouseListener(new ChangeColorListener());
+            missPairColorLabel.addMouseListener(new ChangeColorListener());
+        }
+
         refreshConfiguration();
     }
 
@@ -140,6 +152,27 @@ public class ConfigureColorAndShapeDialog extends JDialog {
             toBeSaveConfiguration.put(type , property);
         }
         ColorPairsConfigurations.getInstance().saveConfig(toBeSaveConfiguration);
+    }
+
+    /**
+     * use to change the pair color
+     */
+    class ChangeColorListener extends MouseAdapter {
+        @Override
+        public void mouseReleased(MouseEvent e)
+        {
+            Object object = e.getSource();
+            if(object instanceof JLabel)
+            {
+                JLabel targetLabel= (JLabel)object;
+                if(targetLabel == null)
+                    return;
+                // open the color chooser
+                Color c = ColorChooser.chooseColor(ConfigureColorAndShapeDialog.this,"Choose Pair Color",targetLabel.getBackground());
+                if(c != null)
+                    targetLabel.setBackground(c);
+            }
+        }
     }
 
     public static void main(String[] args) {
