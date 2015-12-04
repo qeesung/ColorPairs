@@ -1,5 +1,6 @@
 package io.github.qeesung.utils;
 
+import io.github.qeesung.data.ColorPairsConfiguration;
 import io.github.qeesung.data.PairColorProperty;
 import io.github.qeesung.data.PairColorShape;
 import io.github.qeesung.data.PairType;
@@ -24,13 +25,16 @@ public class ColorPairsConfigFileHandler {
 
     /**
      * write all config to a xml file
-     * @param configMap all configurations
+     * @param configuration all configurations
      * @param configFile config xml file path
      */
-    public static void writeConfigToXmlFile(Map<PairType, PairColorProperty> configMap , String configFile)
+    public static void writeConfigToXmlFile(ColorPairsConfiguration configuration, String configFile)
     {
-        if(configFile == null || configFile == null)
+        if(configuration == null || configFile == null)
             return;
+
+        Map<PairType , PairColorProperty> configMap = configuration.getGlobalConfigMap();
+        boolean enabled = configuration.isColorPairsEnabled();
 
         DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder docBuilder = null;
@@ -44,6 +48,10 @@ public class ColorPairsConfigFileHandler {
         Document doc = docBuilder.newDocument();
         Element rootElement = doc.createElement(ColorPairsConfigFileTagName.ROOT_TAG);
         doc.appendChild(rootElement);
+
+        Attr enableAttr = doc.createAttribute(ColorPairsConfigFileTagName.ENABLE_ATTR);
+        enableAttr.setValue(enabled+"");
+        rootElement.setAttributeNode(enableAttr);
 
         // write all pairs
         for (PairType type : configMap.keySet() )
@@ -105,11 +113,13 @@ public class ColorPairsConfigFileHandler {
     }
 
 
-    public static void readConfigFromXmlFile(Map<PairType , PairColorProperty> configMap , String configFile)
+    public static void readConfigFromXmlFile(ColorPairsConfiguration configuration, String configFile)
     {
-        if(configMap == null || configFile == null)
+        if(configuration == null || configFile == null)
             return;
-        configMap.clear(); // remove all old configurations
+        configuration.clearConfiguration(); // remove all old configurations
+
+        Map<PairType , PairColorProperty> configMap = configuration.getGlobalConfigMap();
 
         File fXmlFile = new File(configFile);
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -129,6 +139,19 @@ public class ColorPairsConfigFileHandler {
         }
 
         doc.getDocumentElement().normalize();
+        NodeList pairsNodeList = doc.getElementsByTagName(ColorPairsConfigFileTagName.ROOT_TAG);
+        if(pairsNodeList.getLength() == 0)
+            return;
+        // get the enable attr
+        {
+            Node node = pairsNodeList.item(0);
+            if(node.getNodeType() == Node.ELEMENT_NODE)
+            {
+                Element pairNode = (Element)node;
+                Attr attr = pairNode.getAttributeNode(ColorPairsConfigFileTagName.ENABLE_ATTR);
+                configuration.setColorPairsEnabled(attr.getValue().equals("true") ? true: false );
+            }
+        }
 
         NodeList nList = doc.getElementsByTagName(ColorPairsConfigFileTagName.PAIR_TAG);
         for (int i = 0; i < nList.getLength() ; i++) {

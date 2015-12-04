@@ -2,7 +2,6 @@ package io.github.qeesung.actions;
 
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import io.github.qeesung.data.ColorPairsConfigurations;
 import io.github.qeesung.ui.ConfigureColorAndShapeDialog;
 
 import java.awt.*;

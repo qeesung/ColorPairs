@@ -114,7 +114,7 @@ public class ConfigureColorAndShapeDialog extends JDialog {
      */
     private void resetConfiguration()
     {
-        ColorPairsConfigurations.getInstance().saveConfig(ColorPairsDefaultSetting.getDefaultSetting());
+        ColorPairsConfigurationHandler.getMyInstance().saveConfig(ColorPairsDefaultConfiguration.getDefaultConfiguration());
         refreshConfiguration();
     }
 
@@ -123,7 +123,7 @@ public class ConfigureColorAndShapeDialog extends JDialog {
      */
     private void refreshConfiguration()
     {
-        Map<PairType , PairColorProperty> configMap = ColorPairsConfigurations.getInstance().getGlobalConfigMap();
+        Map<PairType , PairColorProperty> configMap = ColorPairsConfigurationHandler.getMyInstance().getGlobalConfigMap();
         for(PairType type : configMap.keySet())
         {
             PairColorProperty property = configMap.get(type);
@@ -151,7 +151,9 @@ public class ConfigureColorAndShapeDialog extends JDialog {
             PairColorProperty property = new PairColorProperty(color , shape);
             toBeSaveConfiguration.put(type , property);
         }
-        ColorPairsConfigurations.getInstance().saveConfig(toBeSaveConfiguration);
+
+        boolean enabled = ColorPairsConfigurationHandler.getMyInstance().isColorPairsEnabled();
+        ColorPairsConfigurationHandler.getMyInstance().saveConfig(new ColorPairsConfiguration(toBeSaveConfiguration ,enabled ));
     }
 
     /**

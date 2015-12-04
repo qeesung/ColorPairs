@@ -9,4 +9,5 @@ public class ColorPairsConfigFileTagName {
     public static final String TYPE_TAG = "type";
     public static final String COLOR_TAG = "color";
     public static final String SHAPE_TAG = "shape";
+    public static final String ENABLE_ATTR = "enabled";
 }
