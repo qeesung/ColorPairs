@@ -123,7 +123,7 @@ public class ConfigureColorAndShapeDialog extends JDialog {
      */
     private void refreshConfiguration()
     {
-        Map<PairType , PairColorProperty> configMap = ColorPairsConfigurationHandler.getMyInstance().getGlobalConfigMap();
+        Map<PairType , PairColorProperty> configMap = ColorPairsConfigurationHandler.getMyInstance().getConfiguration().getGlobalConfigMap();
         for(PairType type : configMap.keySet())
         {
             PairColorProperty property = configMap.get(type);

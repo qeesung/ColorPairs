@@ -38,9 +38,9 @@ public class ColorPairsConfigurationHandler {
         loadConfig();
     }
 
-    public Map<PairType , PairColorProperty> getGlobalConfigMap()
+    public ColorPairsConfiguration getConfiguration()
     {
-        return this.configuration.getGlobalConfigMap();
+        return this.configuration;
     }
 
     public boolean isColorPairsEnabled()
