@@ -40,6 +40,19 @@
   <depends>com.intellij.modules.lang</depends>
   -->
 
+  <!--add a application to do some color pairs init work-->
+  <application-components>
+    <component>
+      <implementation-class>io.github.qeesung.utils.ColorPairsApplicationComponent</implementation-class>
+    </component>>
+  </application-components>
+
+  <project-components>
+    <component>
+      <implementation-class>io.github.qeesung.utils.ColorPairsProjectComponent</implementation-class>
+    </component>
+  </project-components>
+
   <extensions defaultExtensionNs="com.intellij">
     <!-- Add your extensions here -->
   </extensions>

@@ -4,7 +4,6 @@ package io.github.qeesung.data;
 import io.github.qeesung.utils.ColorPairsConfigFileHandler;
 
 import java.io.File;
-import java.util.Map;
 
 /**
  * Created by qeesung on 2015/11/29.
