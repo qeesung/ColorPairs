@@ -1,8 +1,10 @@
 package io.github.qeesung.utils;
 
+import com.intellij.openapi.editor.event.CaretAdapter;
 import com.intellij.openapi.editor.event.CaretEvent;
 import com.intellij.openapi.editor.event.CaretListener;
 import com.intellij.openapi.fileEditor.FileEditorManager;
+import com.intellij.openapi.fileEditor.FileEditorManagerAdapter;
 import com.intellij.openapi.fileEditor.FileEditorManagerEvent;
 import com.intellij.openapi.fileEditor.FileEditorManagerListener;
 import com.intellij.openapi.project.Project;
@@ -50,39 +52,20 @@ public class ColorPairsListenerManager {
         }
     }
 
-    private class ColorPairsFileEditorManagerListener implements FileEditorManagerListener {
+    private class ColorPairsFileEditorManagerListener extends FileEditorManagerAdapter {
 
         @Override
         public void fileOpened(@NotNull FileEditorManager fileEditorManager, @NotNull VirtualFile virtualFile) {
             fileEditorManager.getSelectedTextEditor().getCaretModel().addCaretListener(caretListener);
         }
-
-        @Override
-        public void fileClosed(@NotNull FileEditorManager fileEditorManager, @NotNull VirtualFile virtualFile) {
-
-        }
-
-        @Override
-        public void selectionChanged(@NotNull FileEditorManagerEvent fileEditorManagerEvent) {
-        }
     }
 
-    private static class ColorPairsCaretListener implements CaretListener
+    private static class ColorPairsCaretListener extends CaretAdapter
     {
 
         @Override
         public void caretPositionChanged(CaretEvent caretEvent) {
             System.out.println("Current postion is "+caretEvent.getNewPosition().toString());
-        }
-
-        @Override
-        public void caretAdded(CaretEvent caretEvent) {
-
-        }
-
-        @Override
-        public void caretRemoved(CaretEvent caretEvent) {
-
         }
     }
 
