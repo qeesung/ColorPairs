@@ -90,33 +90,40 @@ public class ColorPairsListenerManager {
         public void caretPositionChanged(CaretEvent caretEvent) {
             Editor myEditor = caretEvent.getEditor();
             Project myProject = myEditor.getProject();
-            System.out.println("Current postion is "+caretEvent.getNewPosition().toString());
-
-            Document document = myEditor.getDocument();
-            PsiFile psiFile = PsiDocumentManager.getInstance(myProject).getPsiFile(document);
-            PsiElement psiElement = psiFile.findElementAt(caretEvent.getCaret().getOffset());
-            if(psiElement != null)
-                System.out.println(psiElement.toString());
-
-//            HighlightManager highlightManager = HighlightManager.getInstance(myProject);
-//            LogicalPosition logicalPosition = caretEvent.getNewPosition();
-//            EditorColorsScheme scheme = myEditor.getColorsScheme();
-//            final TextAttributes attributes = new TextAttributes();
-//            Color defaultColor = EditorColorsManager.getInstance().getGlobalScheme().getDefaultBackground();
-//            attributes.setEffectType(EffectType.ROUNDED_BOX);
-////            attributes.setBackgroundColor(new Color(255,0,0));
-//            if(number%2 == 0) {
-//                attributes.setEffectColor(new Color(0, 255, 0));
-//            }
-//            else
-//                attributes.setEffectColor(defaultColor);
+//            System.out.println("Current postion is "+caretEvent.getNewPosition().toString());
 //
-//
-//            TextRange textRange = new TextRange(0,6);
-//            List<TextRange> list = new ArrayList<>();
-//            list.add(textRange);
-//            HighlightUsagesHandler.highlightRanges(highlightManager,myEditor , attributes,false, list);
-//            number++;
+//            Document document = myEditor.getDocument();
+//            PsiFile psiFile = PsiDocumentManager.getInstance(myProject).getPsiFile(document);
+//            PsiElement psiElement = psiFile.findElementAt(caretEvent.getCaret().getOffset());
+//            if(psiElement != null)
+//                System.out.println(psiElement.toString());
+
+            HighlightManager highlightManager = HighlightManager.getInstance(myProject);
+            EditorColorsScheme scheme = myEditor.getColorsScheme();
+            final TextAttributes attributes = new TextAttributes();
+            Color defaultColor = EditorColorsManager.getInstance().getGlobalScheme().getDefaultBackground();
+            attributes.setEffectType(EffectType.ROUNDED_BOX);
+//            attributes.setBackgroundColor(new Color(255,0,0));
+            if(number%2 == 0) {
+                attributes.setEffectColor(new Color(0, 255, 0));
+            }
+            else
+                attributes.setEffectColor(defaultColor);
+
+
+            JavaFilePairFinder javaFilePairFinder = new JavaFilePairFinder();
+            TextRange textRange = javaFilePairFinder.getForwardPairRange(caretEvent);
+            TextRange textRange1 = javaFilePairFinder.getBackwardPairRange(caretEvent);
+            if(textRange == null || textRange1 == null)
+                return;
+            String conent = myEditor.getDocument().getText();
+            System.out.println(conent.substring(textRange.getStartOffset() , textRange.getEndOffset()));
+            System.out.println(conent.substring(textRange1.getStartOffset() , textRange1.getEndOffset()));
+            List<TextRange> list = new ArrayList<>();
+            list.add(textRange);
+            list.add(textRange1);
+            HighlightUsagesHandler.highlightRanges(highlightManager,myEditor , attributes,false, list);
+            number++;
 
         }
 
